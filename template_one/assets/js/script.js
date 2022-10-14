@@ -36,20 +36,19 @@ filterItem.forEach(item => {
     });
 });
 
+// fixed header and change bg color
 
 if(heroSection != null) {
-// fixed header and change bg color
-window.addEventListener("scroll", () => {
-    const scrollY = window.pageYOffset;
-    const heroSecOffset = heroSection.offsetHeight
+    window.addEventListener("scroll", () => {
+        const scrollY = window.pageYOffset;
+        const heroSecOffset = heroSection.offsetHeight
 
-    if(scrollY > heroSecOffset - 1){
-        header.classList.add("header-active");
-    }else{
-        header.classList.remove("header-active");
-    }
-});
-
+        if(scrollY > heroSecOffset - 1){
+            header.classList.add("header-active");
+        }else{
+            header.classList.remove("header-active");
+        }
+    });
 }
 
 
@@ -61,14 +60,12 @@ if(scrollTop != null ) {
 }
 
 // go to section
-
 if(menu != null ) {
     menu.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: "smooth",
-                block: "start"
             })
         })
     });
