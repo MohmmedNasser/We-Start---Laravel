@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Stark</title>
+</head>
+<body>
+
+    <header class="github-header">
+        <div class="container">
+            <div class="header-wraper">
+
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./assets//imgs/logo.png" alt="" class="img-fluid">
+                    </a>
+                </div>
+
+
+                <div class="">
+                    <a href="index.html" class="back-home">
+                        Back
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="github-page">
+            <div class="container">
+                <div class="github-form">
+
+                    <h2>Search Github Users</h2>
+                    <form id="githubForm">
+                        <div class="wrap">
+                            <div class="form-group">
+                                <input type="text" id="searchUser" class="form-input" placeholder="Github Search">
+                            </div>
+                            <button class="btn main-btn" type="submit">
+                                Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="user-boxs" id="githubUser">
+                    
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>
+                2022 &copy; We Start , Design by Mohammed Nasser.
+            </p>
+        </div>
+    </footer>
+
+    <div class="loader" id="loader">
+        <span id="loaderNum">0</span>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

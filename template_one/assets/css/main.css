@@ -1,0 +1,781 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url("../fonts/Montserrat-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url("../fonts/Montserrat-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url("../fonts/Montserrat-Bold.ttf");
+  font-weight: 700;
+}
+
+:root {
+  --main-color: #09b9bb;
+  --hover-color: #079597;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  color: #272727;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-btn {
+  background: var(--main-color);
+  color: #FFF;
+  border-radius: 20px;
+  padding: 5px 20px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.main-btn:hover {
+  background: var(--hover-color);
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+header .header-wraper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0;
+}
+
+header .header-wraper .logo a img {
+  -webkit-filter: invert(1) brightness(10);
+          filter: invert(1) brightness(10);
+}
+
+header .header-wraper nav.menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+
+header .header-wraper nav.menu ul li a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #FFF;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+header .header-wraper nav.menu ul li a:hover {
+  color: var(--main-color);
+}
+
+header.header-active {
+  background: #FFF;
+  position: fixed;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+header.header-active .logo a img {
+  -webkit-filter: none;
+          filter: none;
+}
+
+header.header-active nav.menu ul li a {
+  color: #272727;
+}
+
+header.github-header {
+  background-color: var(--main-color);
+}
+
+header.github-header .back-home {
+  color: #FFF;
+  font-weight: 500;
+}
+
+.hero-sec {
+  background: url("../imgs/hero-bg.jpg") no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.hero-sec:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 0;
+}
+
+.hero-sec .wrap {
+  position: relative;
+  z-index: 2;
+  color: #FFF;
+}
+
+.hero-sec .wrap h1 {
+  font-size: 65px;
+}
+
+.hero-sec .wrap h1 span {
+  color: var(--main-color);
+  position: relative;
+}
+
+.hero-sec .wrap h1 span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 70%;
+  height: 3px;
+  z-index: -1;
+  border-radius: 20px;
+  background-color: #FFF;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.hero-sec .wrap h1:hover span:after {
+  width: 100%;
+}
+
+.hero-sec .wrap h2 {
+  font-size: 18px;
+  width: 50%;
+  line-height: 30px;
+  margin: 15px auto 0;
+  font-weight: normal;
+}
+
+.hero-sec .wrap .action {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero-sec .wrap .action .btn {
+  border-radius: 20px;
+  padding: 10px 30px;
+  font-weight: 500;
+  font-size: 14px;
+  outline: none;
+  border: 1px solid #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FFF;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: transparent;
+  font-weight: 500;
+}
+
+.hero-sec .wrap .action .btn:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.hero-sec .social-media {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+  bottom: 20px;
+  z-index: 2;
+}
+
+.hero-sec .social-media ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+
+.hero-sec .social-media ul li a {
+  width: 35px;
+  height: 35px;
+  background-color: #FFF;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.hero-sec .social-media ul li a img {
+  width: 20px;
+}
+
+.hero-sec .social-media ul li a:hover {
+  -webkit-transform: scale(1.2) rotate(360deg);
+      -ms-transform: scale(1.2) rotate(360deg);
+          transform: scale(1.2) rotate(360deg);
+}
+
+.about-sec {
+  padding: 80px 0;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.about-sec .wrap {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.about-sec .wrap h5 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 30px;
+  color: #424242;
+}
+
+.about-sec .wrap p {
+  margin-bottom: 10px;
+  line-height: 25px;
+  font-weight: normal;
+  color: #757575;
+  font-size: 15px;
+}
+
+.portfolio-sec {
+  padding: 80px 0;
+}
+
+.portfolio-sec .filter-portfolio {
+  margin-bottom: 40px;
+}
+
+.portfolio-sec .filter-portfolio ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+}
+
+.portfolio-sec .filter-portfolio ul li {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.portfolio-sec .filter-portfolio ul li a {
+  min-width: 150px;
+  padding: 8px 15px;
+  border-radius: 30px;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.portfolio-sec .filter-portfolio ul li a:hover {
+  background: var(--main-color);
+  color: #FFF;
+}
+
+.portfolio-sec .filter-portfolio ul li.active a {
+  background: var(--main-color);
+  color: #FFF;
+}
+
+.portfolio-sec .portfolio-boxs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.portfolio-sec .portfolio-boxs .box {
+  height: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.portfolio-sec .portfolio-boxs .box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.portfolio-sec .portfolio-boxs .box.hide {
+  display: none;
+}
+
+.portfolio-sec .portfolio-boxs .box.active {
+  display: block;
+}
+
+.contact-sec {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.contact-sec .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 50px;
+}
+
+.contact-sec .wrap .map {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 320px;
+}
+
+.contact-sec .wrap .map iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.contact-sec .wrap .form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.contact-sec .wrap .form form {
+  width: 100%;
+}
+
+.contact-sec .wrap .form form .action .btn {
+  min-width: 150px;
+  height: 40px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group .form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  padding: 5px 10px;
+  outline: none;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.form-group .form-input::-webkit-input-placeholder {
+  font-size: 14px;
+}
+
+.form-group .form-input:-ms-input-placeholder {
+  font-size: 14px;
+}
+
+.form-group .form-input::-ms-input-placeholder {
+  font-size: 14px;
+}
+
+.form-group .form-input::placeholder {
+  font-size: 14px;
+}
+
+.form-group .form-input.has-error {
+  border-color: #ff4949;
+}
+
+.form-group .error {
+  display: none;
+  font-size: 13px;
+  margin: 5px 5px 0;
+  color: #F00;
+}
+
+.form-group textarea {
+  height: 150px !important;
+  resize: none;
+}
+
+footer {
+  background-color: #3e3e3e;
+  text-align: center;
+  padding: 15px;
+}
+
+footer p {
+  color: #FFF;
+  font-size: 14 [px];
+}
+
+.scroll-top {
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--main-color);
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.scroll-top:hover {
+  background-color: var(--hover-color);
+}
+
+.github-page {
+  min-height: calc(100vh - 74px);
+  padding-top: 100px;
+}
+
+.github-page .github-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fafafa;
+  padding: 50px 0;
+  border-radius: 20px;
+}
+
+.github-page .github-form .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+.github-page .github-form .wrap .main-btn {
+  height: 40px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.github-page .github-form h2 {
+  font-size: 25px;
+  margin: 20px 0;
+  color: #363636;
+}
+
+.github-page .github-form .form-group {
+  margin-bottom: 0;
+}
+
+.github-page .github-form .form-group .form-input {
+  min-width: 500px;
+  margin-bottom: 0;
+}
+
+.github-page .user-boxs {
+  margin: 50px 0;
+}
+
+.github-page .user-boxs .user-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  gap: 20px;
+}
+
+.github-page .user-boxs .user-card .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.github-page .user-boxs .user-card .avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.github-page .user-boxs .user-card h3 {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #505050;
+}
+
+.github-page .user-boxs .user-card .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.github-page .user-boxs .user-card .info .info-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.github-page .user-boxs .user-card .info .info-list div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.github-page .user-boxs .user-card .info .info-list div label {
+  font-weight: 500;
+  font-size: 14px;
+  color: #505050;
+}
+
+.github-page .user-boxs .user-card .info .info-list div p {
+  font-weight: bold;
+  color: #505050;
+  font-size: 14px;
+}
+
+.github-page .user-boxs .user-card .main-btn {
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+.github-page .user-boxs .last-repo {
+  margin-top: 30px;
+}
+
+.github-page .user-boxs .last-repo h5 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #363636;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.github-page .user-boxs .last-repo .repo-list .repo-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  gap: 20px;
+}
+
+.github-page .user-boxs .last-repo .repo-list .repo-box div h4 {
+  font-size: 16px;
+  color: #363636;
+  margin-bottom: 8px;
+}
+
+.github-page .user-boxs .last-repo .repo-list .repo-box div p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #363636;
+}
+
+.github-page .user-boxs .last-repo .repo-list .repo-box .btn {
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--main-color);
+  z-index: 99;
+}
+
+.loader span {
+  color: #FFF;
+  font-size: 60px;
+}
+
+.error-text {
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
