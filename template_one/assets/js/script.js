@@ -5,9 +5,10 @@ let filterItem = document.querySelectorAll('.filter-item'),
     menu = document.querySelector('header .menu'),
     scrollTop = document.querySelector('#scrollTop'),
     contactForm = document.querySelector('#contactForm'),
-    name = document.getElementById('name'),
-    email = document.getElementById('email'),
-    message = document.getElementById('message'),
+    formInput = document.querySelectorAll('.contact-sec .form-input'),
+    // name = document.getElementById('name'),
+    // email = document.getElementById('email'),
+    // message = document.getElementById('message'),
     githubForm = document.getElementById('githubForm'),
     githubUser = document.getElementById('githubUser')
     loader = document.getElementById('loader'),
@@ -37,7 +38,6 @@ filterItem.forEach(item => {
 });
 
 // fixed header and change bg color
-
 if(heroSection != null) {
     window.addEventListener("scroll", () => {
         const scrollY = window.pageYOffset;
@@ -72,38 +72,48 @@ if(menu != null ) {
 }
 
 
-function checkInputs() {
-    const nameValue = name.value,
-        emailValue = email.value,
-        messageValue = message.value;
+// function checkInputs() {
+//     const nameValue = name.value,
+//         emailValue = email.value,
+//         messageValue = message.value;
     
-    if(nameValue === "") {
-        name.classList.add('has-error')
-        name.nextElementSibling.style.display = 'block'
-    } else {
-        name.classList.remove('has-error')
-        name.nextElementSibling.style.display = 'none'
-    }
-    if(emailValue === "") {
-        email.classList.add('has-error')
-        email.nextElementSibling.style.display = 'block'
-    } else {
-        email.classList.remove('has-error')
-        email.nextElementSibling.style.display = 'none'
-    }
-    if(messageValue === "") {
-        message.classList.add('has-error')
-        message.nextElementSibling.style.display = 'block'
-    } else {
-        message.classList.remove('has-error')
-        message.nextElementSibling.style.display = 'none'
-    }
-}
+//     if(nameValue === "") {
+//         name.classList.add('has-error')
+//         name.nextElementSibling.style.display = 'block'
+//     } else {
+//         name.classList.remove('has-error')
+//         name.nextElementSibling.style.display = 'none'
+//     }
+//     if(emailValue === "") {
+//         email.classList.add('has-error')
+//         email.nextElementSibling.style.display = 'block'
+//     } else {
+//         email.classList.remove('has-error')
+//         email.nextElementSibling.style.display = 'none'
+//     }
+//     if(messageValue === "") {
+//         message.classList.add('has-error')
+//         message.nextElementSibling.style.display = 'block'
+//     } else {
+//         message.classList.remove('has-error')
+//         message.nextElementSibling.style.display = 'none'
+//     }
+// }
 
 if(contactForm != null ) {
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        checkInputs();
+        // checkInputs();
+        formInput.forEach(el => {
+            if(el.value == '') {
+                e.preventDefault()
+                el.classList.add('has-error')
+                el.parentNode.querySelector('span').style.display = 'block';
+            }else {
+                el.classList.remove('has-error')
+                el.parentNode.querySelector('span').style.display = 'none';
+            }
+        })
     });
 }
 
@@ -203,7 +213,7 @@ if(githubForm != null ) {
 
 window.addEventListener('DOMContentLoaded', e => {
     let time = (e.timeStamp).toFixed(0) / 60;
-    console.log(time);
+    // console.log(time);
     let count = setInterval(function () {
         let number = parseInt(loaderNum.textContent);
         loaderNum.innerHTML = (++number).toString() + '%';
