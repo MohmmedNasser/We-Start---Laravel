@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\RelationController;
 use App\Http\Controllers\InvoicesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,8 @@ Route::prefix('admin')->name('admin.')->middleware('auth', 'type')->group(functi
     Route::resource('posts', PostController::class);
 
     Route::resource('invoices', InvoicesController::class);
+
+    Route::get("one_to_one", [RelationController::class, 'one_to_one']);
 
 });
 

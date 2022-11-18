@@ -40,7 +40,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="{{ url("/") }}" data-toggle="collapse" data-target="#collapsePosts"
             aria-expanded="true" aria-controls="collapsePosts">
-            <i class="fal fa-newspaper"></i>
+            <i class="fa fa-newspaper"></i>
             <span>Posts</span>
         </a>
         <div id="collapsePosts" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -53,7 +53,7 @@
     </li>
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
+    <li class="nav-item d-none">
         <a class="nav-link" href="{{ route('admin.invoices.index') }}">
             <i class="fas fa-file-invoice"></i>
             <span>Invoices</span></a>

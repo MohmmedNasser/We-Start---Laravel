@@ -20,16 +20,20 @@ class DatabaseSeeder extends Seeder
     {
 
         Schema::disableForeignKeyConstraints();
-        User::truncate();
-        Post::truncate();
+//        User::truncate();
+//        Post::truncate();
 
-        User::factory(10)->create();
-        Post::factory(150)->create();
+//        User::factory(10)->create();
+//        Post::factory(150)->create();
+
+
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $this->call(FackDataSeeder::class);
     }
 }

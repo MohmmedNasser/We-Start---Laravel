@@ -43,4 +43,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected function profile()
+    {
+
+    // withDefault use in belongsTo and has one
+        return $this->hasOne(Profile::class, 'user_id')->withDefault(['image' => 'No Image Found']);
+    }
+
 }
