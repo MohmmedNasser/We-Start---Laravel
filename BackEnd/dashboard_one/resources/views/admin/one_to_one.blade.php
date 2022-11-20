@@ -45,7 +45,6 @@
                             <td>  {{  $user->profile->image  }} </td>
                             <td> {{  $user->profile->date_of_birth  }} </td>
 
-
 {{--                            <td> {{ $user->profile ? $user->profile->image : "" }} </td>--}}
 {{--                            <td> {{ $user->profile->image ?? "" }} </td>--}}
 {{--                            <td> {{ $user->profile ? $user->profile->date_of_birth : "" }} </td>--}}

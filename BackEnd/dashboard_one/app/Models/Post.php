@@ -12,4 +12,9 @@ class Post extends Model
 
     protected $fillable = ['title', 'slug', 'image', 'content', 'user_id', 'updated_by', 'deleted_by'];
     // protected $guarded = [];
+
+    public function comments() {
+        return $this->hasMany(Comment::class);
+    }
+
 }

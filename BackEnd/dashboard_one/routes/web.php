@@ -17,8 +17,8 @@ Route::prefix('admin')->name('admin.')->middleware('auth', 'type')->group(functi
 
     Route::resource('invoices', InvoicesController::class);
 
-    Route::get("one_to_one", [RelationController::class, 'one_to_one']);
-
+    Route::get("one_to_one", [RelationController::class, 'one_to_one'])->name('one_to_one');
+    Route::get("one_to_many", [RelationController::class, 'one_to_many'])->name('one_to_many');
 });
 
 

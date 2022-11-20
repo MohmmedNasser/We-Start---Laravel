@@ -52,12 +52,21 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.one_to_one') }}">
+            <i class="fas fa-file-invoice"></i>
+            <span>Users</span>
+        </a>
+    </li>
+
+
     <!-- Nav Item - Dashboard -->
     <li class="nav-item d-none">
         <a class="nav-link" href="{{ route('admin.invoices.index') }}">
             <i class="fas fa-file-invoice"></i>
             <span>Invoices</span></a>
     </li>
+
 
 
 

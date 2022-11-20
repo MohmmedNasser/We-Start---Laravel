@@ -12,6 +12,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+//    protected $with = ['profile'];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -44,7 +46,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected function profile()
+    public function profile()
     {
 
     // withDefault use in belongsTo and has one
