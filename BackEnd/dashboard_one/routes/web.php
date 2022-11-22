@@ -19,6 +19,12 @@ Route::prefix('admin')->name('admin.')->middleware('auth', 'type')->group(functi
 
     Route::get("one_to_one", [RelationController::class, 'one_to_one'])->name('one_to_one');
     Route::get("one_to_many", [RelationController::class, 'one_to_many'])->name('one_to_many');
+    Route::post("one_to_many", [RelationController::class, 'add_comment'])->name('add_comment');
+
+    Route::get("many_to_many", [RelationController::class, 'many_to_many']);
+
+    Route::post("many_to_many", [RelationController::class, 'many_to_many_data'])->name('many_to_many');
+
 });
 
 

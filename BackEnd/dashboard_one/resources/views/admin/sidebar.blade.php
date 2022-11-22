@@ -59,6 +59,20 @@
         </a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.one_to_many') }}">
+            <i class="fas fa-file-invoice"></i>
+            <span>Post and Comment</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.many_to_many') }}">
+            <i class="fas fa-file-invoice"></i>
+            <span>Courses</span>
+        </a>
+    </li>
+
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item d-none">
@@ -86,11 +100,6 @@
     </li> --}}
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url("index.html") }}">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Users</span></a>
-    </li>
 
 
     <!-- Divider -->
