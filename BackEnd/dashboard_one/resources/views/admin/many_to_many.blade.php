@@ -42,15 +42,18 @@
                         </thead>
                         <tbody>
                         @foreach($courses as $course)
+
+
+
                             <tr>
                                 <td>
-                                    <input @checked($std->courses->find( $course->id )) type="checkbox" name="courses[]" value=" {{ $course->id }} ">
+                                    <input type="checkbox" data-id="{{$course->id}}" @checked($std->courses->find( $course->id )) name="courses[]" value=" {{ $course->id }} ">
                                     {{ $course->id }}
                                 </td>
                                 <td> {{ $course->name }} </td>
                                 <td> {{ $course->hours }} </td>
                                 <td>
-                                    <input  type="text" class="form-control" name="marks[{{ $course->id }}][mark]" placeholder="Mark">
+                                    <input {{ $std->courses->find($course->id) ? '' : 'disabled' }} type="text" id="mark-{{ $course->id }}" class="form-control" name="marks[{{ $course->id }}][mark]" placeholder="Mark" value="{{ $std->courses->find($course->id)->pivot->mark ?? '' }}">
                                 </td>
                             </tr>
                         @endforeach
@@ -77,6 +80,21 @@
 @stop
 
 @section('scripts')
+
+    <script>
+        let incheck = document.querySelectorAll('input[type=checkbox]');
+        incheck.forEach(el => {
+            el.onchange = () => {
+                let id = el.dataset.id;
+                if(el.checked) {
+                    document.querySelector('#mark-' + id).disabled = false;
+                } else {
+                    document.querySelector('#mark-' + id).disabled = true;
+                }
+            }
+        })
+
+    </script>
 
 @endsection
 

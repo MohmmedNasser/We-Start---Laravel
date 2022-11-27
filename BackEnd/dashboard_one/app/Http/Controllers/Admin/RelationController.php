@@ -110,12 +110,14 @@ class RelationController extends Controller
                 unset($data[$id]);
             }
         }
-        dd($data);
+//        dd($data);
 
         // attach => just add
         // $std->courses()->attach($request->courses);
         // $std->courses()->detach($request->courses);
-        $std->courses()->sync($request->courses);
+//        $std->courses()->sync($request->courses);
+
+        $std->courses()->sync($data);
 
         return redirect()->back();
 
