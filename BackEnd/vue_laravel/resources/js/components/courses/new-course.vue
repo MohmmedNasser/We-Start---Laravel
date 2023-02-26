@@ -1,6 +1,12 @@
 <template>
     <div class="container my-5">
 
+        <div v-if="Object.keys(errors).length > 0" class="alert alert-danger">
+            <p v-for="(err, i) in errors" :key="i" class="mb-0">
+                  {{ err[0] }}
+            </p>
+        </div>
+
         <h4 class="mb-4 fw-bold">
             All Coueses
         </h4>
@@ -11,14 +17,20 @@
                     <label class="mb-1">
                         Title
                     </label>
-                    <input type="text" placeholder="Title" class="form-control" v-model="courses.title">
+                    <input type="text" placeholder="Title" class="form-control" v-model="courses.title" :class="{ 'is-invalid' : errors.title }">
+                    <span v-if="errors.title" class="invalid-feedback">
+                        {{ errors.title[0] }}
+                    </span>
                 </div>
 
                 <div  class="mb-3">
                     <label class="mb-1">
                         Image
                     </label>
-                    <input type="file" class="form-control" @change="updateImage">
+                    <input type="file" class="form-control" @change="updateImage" :class="{ 'is-invalid' : errors.image }">
+                    <span v-if="errors.title" class="invalid-feedback">
+                        {{ errors.image[0] }}
+                    </span>
                 </div>
 
                 <div  class="mb-3">
@@ -66,6 +78,8 @@
         discount : '',
     });
 
+    let errors = ref({});
+
     const router = useRouter();
 
     const updateImage = (e) => {
@@ -93,7 +107,11 @@
                     icon: 'success',
                     title: 'Course added successfully'
                 });
-            })
+            }).catch(err => {
+                errors.value = err.response.data.errors;
+                console.log(err.response.data.errors);
+
+        })
     }
 
 </script>

@@ -1,0 +1,10 @@
+[{"id":1,"image":"http://dummyimage.com/260x200.png/dddddd/000000","title":"Carbonated Water - Lemon Lime","price":15,"category":"Wall Protection","colors":["red", "blue"]},
+{"id":2,"image":"http://dummyimage.com/260x200.png/dddddd/000000","title":"Lettuce - California Mix","price":5,"category":"Structural and Misc Steel (Fabrication)","colors":["red", "blue", "green"]},
+{"id":3,"image":"http://dummyimage.com/260x200.png/cc0000/ffffff","title":"Ham - Virginia","price":62,"category":"Construction Clean and Final Clean","colors":["yellow"]},
+{"id":4,"image":"http://dummyimage.com/260x200.png/5fa2dd/ffffff","title":"Appetizer - Sausage Rolls","price":86,"category":"Elevator","colors":["blue"]},
+{"id":5,"image":"http://dummyimage.com/260x200.png/cc0000/ffffff","title":"Chicken - Wieners","price":30,"category":"HVAC","colors":["pink"]},
+{"id":6,"image":"http://dummyimage.com/260x200.png/ff4444/ffffff","title":"Gingerale - Diet - Schweppes","price":96,"category":"Doors, Frames & Hardware","colors":["orange"]},
+{"id":7,"image":"http://dummyimage.com/260x200.png/5fa2dd/ffffff","title":"Tea Leaves - Oolong","price":53,"category":"Casework","colors":["yellow"]},
+{"id":8,"image":"http://dummyimage.com/260x200.png/ff4444/ffffff","title":"Taro Root","price":87,"category":"Doors, Frames & Hardware","colors":["green", "yellow"]},
+{"id":9,"image":"http://dummyimage.com/260x200.png/dddddd/000000","title":"Potatoes - Fingerling 4 Oz","price":18,"category":"Construction Clean and Final Clean","colors":["blue"]},
+{"id":10,"image":"http://dummyimage.com/260x200.png/5fa2dd/ffffff","title":"Wine - Pinot Noir Mondavi Coastal","price":41,"category":"Retaining Wall and Brick Pavers","colors":["red"]}]

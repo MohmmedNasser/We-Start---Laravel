@@ -22,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="course in courses" :key="course.id">
+                <tr v-for="course in courses.data" :key="course.id">
                     <td>
                         {{ course.id }}
                     </td>
@@ -53,6 +53,12 @@
             </tbody>
         </table>
 
+
+        <Bootstrap5Pagination
+            :data="courses"
+            @pagination-change-page="getCourses"
+            />
+
     </div>
 </template>
 
@@ -60,13 +66,14 @@
 
 import {onMounted, ref} from "vue";
 import { useRouter } from 'vue-router';
+import { Bootstrap5Pagination } from 'laravel-vue-pagination';
 
 let router = useRouter();
 
-let courses = ref();
+let courses = ref({});
 
-const getCourses = () => {
-    axios.get('api/v1/courses')
+const getCourses = (page = 1) => {
+    axios.get('/api/v1/courses?page='+page)
         .then((res) => {
             courses.value = res.data.data;
         })

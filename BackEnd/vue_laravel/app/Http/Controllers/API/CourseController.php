@@ -19,7 +19,7 @@ class CourseController extends Controller
         return response()->json([
             'status' => 1,
             'message' => 'Done',
-            'data' => Course::latest('id')->get(),
+            'data' => Course::latest('id')->paginate(1)
         ], 200);
     }
 
@@ -31,6 +31,11 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title' => 'required',
+            'image' => 'required',
+        ]);
 
         $imagename = time().rand().$request->file('image')->getClientOriginalName();
         $request->file('image')->move(public_path('/uploads'), $imagename);
