@@ -13,8 +13,10 @@
     "pinia": "^2.0.16",
     "pinia-plugin-persistedstate": "^3.0.2",
     "vue": "^3.2.37",
+    "vue-i18n": "^9.2.2",
     "vue-router": "^4.1.2",
-    "vue-toastification": "^2.0.0-rc.5"
+    "vue-toastification": "^2.0.0-rc.5",
+    "vue3-star-ratings": "^1.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.1",

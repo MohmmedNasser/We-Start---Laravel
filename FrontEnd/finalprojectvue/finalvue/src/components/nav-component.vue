@@ -54,6 +54,11 @@
                         <router-link to="/login" class="text-gray-200 hover:text-white transition">Login</router-link>
                         <router-link to="/register" class="text-gray-200 hover:text-white transition">Register</router-link>
                     </template>
+                    <div class="locale-changer">
+                        <select v-model="$i18n.locale" @change="changeLang(this)">
+                            <option  v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,12 +69,26 @@
 <script setup>
     import { useUserStore } from '../stores/user';
     import { useRouter } from 'vue-router';
+    import { ref } from 'vue';
+
     const user = useUserStore();
     const router = useRouter();
+    const lang = ref('');
 
     const logout = () => {
         user.logOutUser();
         router.push('/');
+    }
+
+    const changeLang = (e) => {
+        lang.value = e.$i18n.locale;
+        localStorage.setItem('locale', e.$i18n.locale);
+
+        // if(lang.value == 'ar') {
+        //     document.querySelector('html').setAttribute('dir', 'rtl');
+        // } else {
+        //     document.querySelector('html').setAttribute('dir', 'ltr');
+        // }
     }
 
 </script>

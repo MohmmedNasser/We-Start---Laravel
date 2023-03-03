@@ -45,12 +45,12 @@ class SiteController extends Controller
     }
 
     public function products(Request $request) {
-        $data = ProductsResource::collection(Product::with('image', 'gallery', 'variations', 'category')->get());
+        $data = ProductsResource::collection(Product::with('image', 'gallery', 'variations', 'category','reviews')->get());
         return BaseController::msg(1, "All Products", 200, $data);
     }
 
     public function product($slug) {
-        $data = new ProductsResource(Product::query()->where('slug', $slug)->with('image', 'gallery', 'variations', 'category')->first());
+        $data = new ProductsResource(Product::query()->where('slug', $slug)->with('image', 'gallery', 'variations', 'category', 'reviews')->first());
 
         return BaseController::msg(1, "get product Info", 200, $data);
 
@@ -93,6 +93,13 @@ class SiteController extends Controller
         } else {
             return BaseController::msg(0,'You Otp is invalid', 422);
         }
+    }
+
+
+    public function related_products($id, $category_id) {
+        $data = ProductsResource::collection(Product::where('category_id', $category_id)->where('id', '!=', $id)->with('image', 'gallery', 'variations', 'category', 'reviews')->get());
+
+        return BaseController::msg(1,'Related Products', 200, $data);
     }
 
 }

@@ -95,6 +95,18 @@ trait Trans {
     }
 
     // desc
+
+    public function getTransDescAttribute() {
+
+
+        if($this->desc) {
+            return json_decode($this->desc, true)[app()->getLocale()];
+        }
+        return $this->desc;
+
+    }
+
+
     public function getEnDescAttribute() {
         if($this->desc) {
             return json_decode($this->desc, true)['en'];

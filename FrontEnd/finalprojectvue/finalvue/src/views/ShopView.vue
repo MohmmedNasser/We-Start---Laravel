@@ -239,7 +239,7 @@
                             <template v-if="product.coupons">
                                 <p class="text-xl text-primary font-semibold">
                                     $ 
-                                    <template v-if="product.coupons.type == 'value' ">
+                                    <template v-if="product.coupons.type == 'value'">
                                         {{ product.price - product.coupons.value }}
                                     </template>
                                     <template v-else>
@@ -251,7 +251,7 @@
                                 </p>
                             </template>
                             <template v-else>
-                                <p class="text-sm text-gray-400 line-through">
+                                <p class="text-xl text-primary font-semibold">
                                     $ {{ product.price }}
                                 </p>
                             </template>

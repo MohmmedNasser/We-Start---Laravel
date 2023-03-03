@@ -21,8 +21,10 @@ class ProductsResource extends JsonResource
             'short' => $this->trans_small,
             'desc' => $this->trans_desc,
             'price' => $this->price,
+            'final_price' => $this->final_price,
             'featured' => $this->featured,
             'quantity' => $this->quantity,
+            'category_id' => $this->category_id,
             'category'=> [
                 'name' => $this->category->trans_name,
                 'slug' => $this->category->slug,
@@ -30,8 +32,17 @@ class ProductsResource extends JsonResource
 //            'image' => new GalleryResource($this->image),
             'image' => url($this->image->path),
             'gallery' => GalleryResource::collection($this->gallery),
-            'variations' => $this->variations,
+//            'variations' => $this->variations,
+            'variations' => [
+                'colors' => $this->variations()->where('type', 'colors')->select('id', 'value', 'extraprice')->get(),
+                'sizes' => $this->variations()->where('type', 'sizes')->select('id', 'value', 'extraprice')->get(),
+            ],
             'coupons' => $this->coupons,
+            'reviews' => [
+                'count' => $this->reviews->count(),
+                'rate' => round($this->reviews->avg('star'), 2),
+            ]
+
         ];
     }
 }
