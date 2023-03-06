@@ -38,7 +38,7 @@ class Product extends Model
         return $this->hasMany(ProductVariation::class);
     }
 
-    public function coupons()
+        public function coupons()
     {
         return $this->hasOne(Coupon::class);
     }

@@ -26,7 +26,8 @@ export const useUserStore = defineStore({
           user_id: this.getUserId(),
         }
       }).then(res => {
-        this.cart = res.data;
+        this.cart = res.data.data;
+        console.log(res.data.data);
       });
 
     },

@@ -35,6 +35,7 @@
                     <div
                         class="absolute -right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
                         {{  user.cart ? user.cart.length : 0 }}
+                        
                     </div>
                 </router-link>
                 <a href="#" class="text-center text-gray-700 hover:text-primary transition relative">
@@ -53,6 +54,7 @@
     import { useUserStore } from "../stores/user";
 
     const user = useUserStore();
+
 
 </script>
 

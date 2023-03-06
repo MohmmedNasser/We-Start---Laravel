@@ -36,7 +36,8 @@ const router = createRouter({
       }
     },
     {
-      path: '/checkout',
+      path: '/checkout/:type?',
+      props: true,
       name: 'checkout',
       component: () => import('../views/Checkout.vue'),
       meta: { 

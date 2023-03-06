@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CartResource;
 use App\Http\Resources\HomeCategoriesResource;
 use App\Http\Resources\ProductsResource;
 use App\Mail\ContactMail;
@@ -66,13 +67,16 @@ class SiteController extends Controller
             'user_id' => $request->user_id,
 
         ], [
+            'coupon_id' => $product->coupons ? $product->coupons->id : null,
             'quantity' => DB::raw('quantity +' . $request->quantity),
-            'price' => $product->price
+            'price' => $product->final_price
         ]);
     }
 
     public function cart(Request $request) {
-        return Cart::query()->where('user_id', $request->user_id)->get();
+
+//        return Cart::query()->where('user_id', $request->user_id)->get();
+        return CartResource::collection(Cart::query()->where('user_id', $request->user_id)->get());
     }
 
 
@@ -100,6 +104,24 @@ class SiteController extends Controller
         $data = ProductsResource::collection(Product::where('category_id', $category_id)->where('id', '!=', $id)->with('image', 'gallery', 'variations', 'category', 'reviews')->get());
 
         return BaseController::msg(1,'Related Products', 200, $data);
+    }
+
+    public function check_user_wallet($user_id, $total) {
+
+        $wallet = User::find($user_id)->wallet;
+
+        if($wallet >= $total) {
+            return BaseController::msg(1,'Your Wallet has enough money ', 200);
+        } else {
+            return BaseController::msg(0,'Your Wallet does not have enough money ', 400);
+        }
+    }
+
+    public function purchase(Request $request) {
+        $stripeCharge = $request->user()->charge(
+            $request->amount * 100, $request->payment_method_id
+        );
+        return $stripeCharge;
     }
 
 }

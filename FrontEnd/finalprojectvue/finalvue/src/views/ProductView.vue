@@ -79,11 +79,11 @@
 
 <template>
 
-    {{ product }}
+    <!-- {{ product }}
 
     <hr class="mt-4" />
 
-    {{ $t('hello') }}
+    {{ $t('hello') }} -->
 
     <div class="container py-4 flex items-center gap-3">
         <a href="../index.html" class="text-primary text-base">
@@ -240,7 +240,7 @@
                     </div>
                 </div>
                 <div class="pt-4 pb-3 px-4">
-                    <router-link :to="'/product/'+ related.slug">
+                    <router-link :to="'/products/'+ related.slug">
                         <h4 class="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
                             {{ related.name }}
                         </h4>
